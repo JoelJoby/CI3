@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is my First View</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>MY First view</h1>
-    <h1>codeigniter Training</h1>
+    <h1>This is my second view</h1>
+    <p>cordigniter 3 is the frame work that we r using</p>
+    
 </body>
 </html>

@@ -9,25 +9,25 @@ defined('BASEPATH') OR exit('No direct script access allowed'); //will not allow
             echo "This is index";
         }
 
-        // public function _remap($method)
-        // {
-        //     if($method == "greetings")
-        //     {
-        //         $this -> greetings();
-        //     }
-        //     else if ($method == "welcome")
-        //     {
-        //         $this -> welcome();
-        //     }
-        //     // else if ($method == "edit")
-        //     // {
-        //     //     $this -> edit($id);
-        //     // }
-        //     else 
-        //     {
-        //         $this -> defaultmethod();
-        //     }
-        // }
+        public function _remap($method)
+        {
+            if($method == "greetings")
+            {
+                $this -> greetings();
+            }
+            else if ($method == "welcome")
+            {
+                $this -> welcome();
+            }
+            // else if ($method == "edit")
+            // {
+            //     $this -> edit("$id");
+            // }
+            else 
+            {
+                $this -> defaultmethod();
+            }
+        }
 
         private function myfun()
         {
