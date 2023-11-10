@@ -17,11 +17,16 @@
             if($this -> form_validation -> run() === TRUE )
             {
                 echo "The Values R ok";
+                // $this -> load -> database();
+
+                // $this -> db ->  
             }
             else
             {
                 $this -> load -> view('contact_view');
             }
+
+            
 
            
         }
