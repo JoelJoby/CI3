@@ -8,8 +8,19 @@
 <body>
     <h1>Register Form</h1>
 
-    <?php //echo validation_errors(); ?> 
+    <?php 
+    if ($this -> session -> tempdata("error"))
+    {
+        echo "<p>" . $this -> session -> tempdata("error") . 
+        "</p>"; 
+    }
 
+    if ($this -> session -> tempdata("success"))
+    {
+        echo "<p>" . $this -> session -> tempdata("succcess") . 
+        "</p>"; 
+    }
+    ?>
     <form action="" method="post">
         <table>
 

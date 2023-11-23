@@ -7,7 +7,9 @@
             parent::__construct();
 
             $this -> load -> helper("form");
-            $this -> load -> library("form_validation");
+            $this -> load -> library(array("form_validation","session"));
+            $this -> load -> database();
+            $this -> load -> model("Register_model");
         }
 
         public function index()
@@ -34,14 +36,26 @@
                     "password" => password_hash($this -> input -> post("pwd",TRUE),PASSWORD_DEFAULT),
                     "unid" => md5(str_shuffle(time().$uname.$mobile."abcdefghijklmnpqrstuvwxyz"))  
                 );
+
+                $status = $this -> Register_model -> save_data($data); 
+
+                if($status === TRUE)
+                {
+                    $this -> session -> set_tempdata("success","Account Created Successfully",3);
+                    redirect(current_url());
+                }
+                else
+                {
+                    $this -> session -> set_tempdata("error","Sorry! Unable to create an account",3);
+                    redirect(current_url());
+                    
+                }
             }
 
             else
             {
                 $this -> load -> view('Register_View');                
             }
-
-            
         }
     }
 
