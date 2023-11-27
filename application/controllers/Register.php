@@ -28,22 +28,28 @@
                 // $mobile = $this -> input -> post("mobile",TRUE);
                 // $pwd = $this -> input -> post("pwd",TRUE);
 
+                $name = $this -> input -> post("uname",TRUE);
+
                 $data = array(
-                    "name" => $this -> input -> post("uname",TRUE),
+                    "uname" => $name,
                     "email" => $this -> input -> post("email",True),
                     "gender" => $this -> input -> post("gender",TRUE),
                     "mobile" => $this -> input -> post("mobile",TRUE),
                     "password" => password_hash($this -> input -> post("pwd",TRUE),PASSWORD_DEFAULT),
-                    "unid" => md5(str_shuffle(time().$uname.$mobile."abcdefghijklmnpqrstuvwxyz"))  
+                    "unid" => md5(str_shuffle(time(). $name."abcdefghijklmnpqrstuvwxyz"))  
                 );
 
                 $status = $this -> Register_model -> save_data($data); 
 
-                if($status === TRUE)
+                if($status === true)
                 {
-                    $this -> session -> set_tempdata("success","Account Created Successfully",3);
-                    redirect(current_url());
+                    // $this -> session -> set_tempdata("success","Account Created Successfully",3);
+                    // redirect(current_url());
+
+                    $subject = "Account Activation Link";
+                    $message = "Hi" . $name . "<br><br> Thanks for creating an account with us." . "Please click the below link to activate your account.<fbr><br>";
                 }
+
                 else
                 {
                     $this -> session -> set_tempdata("error","Sorry! Unable to create an account",3);
