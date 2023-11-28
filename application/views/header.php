@@ -49,10 +49,13 @@
                         <div class="collapse navbar-collapse" id="menu">
                             <ul class="navbar-nav ml-lg-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link active" href="<?php echo base_url();?>HomePage">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link ips" href="#features">Features</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-primary" href="<?php echo base_url();?>register">Register</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-primary" href="#">Login</a>
