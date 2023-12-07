@@ -7,7 +7,7 @@
             parent::__construct();
 
             $this -> load -> helper("form");
-            $this -> load -> library(array("form_validation","session"));
+            $this -> load -> library(array("form_validation","email"));
             $this -> load -> database();
             $this -> load -> model("Register_model");
         }

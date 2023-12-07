@@ -54,13 +54,38 @@
                                 <li class="nav-item">
                                     <a class="nav-link ips" href="#features">Features</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-primary" href="<?php echo base_url();?>register">Register</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-primary" href="<?php echo base_url();?>login">Login</a>
-                                </li>
-                            </ul>
+
+                                <?php
+
+                                    if($this -> session-> has_userdata("login_true"))
+                                    {
+                                        ?>
+                                         <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Welcome 
+                                            <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">My Profile</a></li>
+                                                <li><a href="#">Change Password</a></li>
+                                                <li><a href="#">Upload Avatar</a></li>
+                                                <li><a href="<?php echo base_url(); ?>user/logout ">Logout</a></li>
+                                            </ul>
+                                        </div>
+                                        <?php
+                                    }
+                                    else
+                                    {
+                                        ?>
+                                        <li class="nav-item">
+                                        <a class="nav-link text-primary" href="<?php echo base_url();?>register">Register</a>
+                                        </li>
+    
+                                        <li class="nav-item">
+                                            <a class="nav-link text-primary" href="<?php echo base_url();?>login">Login</a>
+                                        </li>
+                                        <?php       
+                                    }
+                                ?>                            
+                           </ul>
                         </div>
                     </nav>
                 </div>

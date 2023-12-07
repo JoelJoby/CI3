@@ -6,7 +6,7 @@
         {
             parent::__construct();
             $this -> load -> helper("form");
-            $this -> load -> library(array("form_validation","session"));
+            $this -> load -> library(array("form_validation"));
             $this -> load -> database();
             $this -> load -> model("login_model");
         }
@@ -29,13 +29,21 @@
                 {
                     if(password_verify($pwd, $info -> password))
                     {
-                        
+                        // $this -> session -> set_userdata("login_true",$info->uniid);
+                        // redirect(base_url()."user");
+
+                        // $this -> session -> set_userdata("login_true",array("unid"=> $info->unid,"uname"=>$info->uname));
+
+                        $this -> session -> set_userdata(array("unid"=>$info->unid,
+                        "uname"=>$info->uname,
+                        "login_true"=>true));
+                        redirect(base_url()."user");
                     }
                     
                     else
                     {
 
-                        $this -> session -> set_tempdata("error","Sorry! The password dosent match");
+                        $this -> session -> set_tempdata("error","Sorry! The password is Wrong",3);
                         redirect(current_url());
                     }
 
