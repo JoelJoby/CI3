@@ -256,13 +256,5 @@
        
         <!--/ End Footer -->
     </div>
-    <!-- jQuery Script -->
-    <script src="<?php echo base_url(); ?>/assets/vendors/jquery/jquery.min.js"></script>
-    <!-- Popper Script -->
-    <script src="<?php echo base_url(); ?>/assets/vendors/bootstrap/js/popper.min.js"></script>
-    <!-- Bootstrap Script -->
-    <script src="<?php echo base_url(); ?>/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Main Script -->
-    <script src="<?php echo base_url(); ?>/assets/js/main.js"></script>
 </body>
 </html>

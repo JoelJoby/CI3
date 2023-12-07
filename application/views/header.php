@@ -61,7 +61,7 @@
                                     {
                                         ?>
                                          <div class="dropdown">
-                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Welcome 
+                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Welcome <?php echo $this -> session->userdata("uname"); ?>
                                             <span class="caret"></span></button>
                                             <ul class="dropdown-menu">
                                                 <li><a href="#">My Profile</a></li>
