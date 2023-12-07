@@ -4,7 +4,11 @@
     {
         public function __construct()
         {
-            parent::__construct();          
+            parent::__construct();    
+            if(!$this -> session -> has_userdata("login_true"))
+            {
+                redirect(base_url()."login");
+            }      
         }
         
         public function index()
